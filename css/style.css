@@ -1,0 +1,222 @@
+:root,
+/* Dark Mode Theme */
+[data-theme="default"] {
+  --body-bg-color: #161722;
+  --input-bg-color: #25273c;
+  --border-color: #4d5066;
+  --btn-hover-color: rgb(67, 67, 201);
+  --strike-color: rgb(255, 56, 56);
+  --box-shadow-color: gray;
+  --text-color: #efefef;
+}
+
+/*** Light Mode Theme ***/
+[data-theme="light"] {
+  --body-bg-color: #fff;
+  --input-bg-color: #e3e4f0;
+  --border-color: #35363d;
+  --btn-hover-color: rgb(209, 51, 99);
+  --strike-color: rgb(56, 103, 255);
+  --box-shadow-color: gray;
+  --text-color: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  background-color: var(--body-bg-color);
+  height: 100%;
+}
+
+.container {
+  position: relative;
+}
+
+.divTag {
+  background-color: var(--input-bg-color);
+  border-bottom: 2px solid var(--border-color);
+  height: 60px;
+  position: relative;
+}
+
+.checkBox {
+  margin-left: 15px;
+  position: absolute;
+  top: 21px;
+  width: 20px;
+  height: 20px;
+}
+
+.pTag {
+  display: inline-block;
+  margin-left: 70px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: absolute;
+  top: 20px;
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.delBtn {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 20px;
+  right: 5px;
+}
+
+.checkBox:checked + .pTag {
+  text-decoration: line-through;
+  text-decoration-color: var(--strike-color);
+  text-decoration-thickness: 3px;
+}
+
+.changeStrike {
+  text-decoration: none;
+}
+
+.img1 {
+  background-image: linear-gradient(
+      to right,
+      rgb(62, 62, 206, 0.72),
+      rgb(226, 71, 71, 0.62)
+    ),
+    url("../image/image1.jpg");
+  width: 1242px;
+  height: 260px;
+  background-position: center;
+  background-size: cover;
+  /* border: 0 solid none; */
+}
+
+.title {
+  color: var(--text-color);
+  position: absolute;
+  top: 70px;
+  left: 400px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 30px;
+  letter-spacing: 15px;
+  font-weight: bold;
+}
+
+.inputBox {
+  position: absolute;
+  background-color: var(--input-bg-color);
+  width: 500px;
+  height: 65px;
+  left: 400px;
+  top: 150px;
+  border-radius: 5px;
+}
+
+.itemLeft {
+  background-color: var(--input-bg-color);
+  width: 500px;
+  height: 65px;
+  /* left: 400px;
+    top: 150px; */
+  position: relative;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.item {
+  position: absolute;
+  left: 210px;
+  top: 18px;
+  color: var(--text-color);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+
+.add {
+  margin: 16px 17px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+.add:hover {
+  background-color: var(--btn-hover-color);
+  border: 1px solid var(--input-bg-color);
+}
+
+.input {
+  width: 360px;
+  height: 25px;
+  /* margin-left: 19px; */
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 16px;
+  border: 0px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.appendDiv {
+  /* border: 1px solid red; */
+  margin: 40px auto;
+  /* overflow-y: scroll;
+    overflow-x: hidden; */
+}
+
+.darkDiv {
+  position: absolute;
+  right: 341px;
+  top: 72px;
+}
+
+.darkMod {
+  -webkit-appearance: none;
+  outline: none;
+  width: 100px;
+  height: 40px;
+  background-image: url(../image/darkMod.png);
+  background-size: cover;
+  position: relative;
+  border-radius: 30px;
+  transition: background-image 0.5s;
+  box-shadow: 0px 2px 5px 1px var(--box-shadow-color);
+}
+
+.darkMod:before {
+  content: "";
+  height: 40px;
+  width: 40px;
+  background-color: rgb(0, 13, 134);
+  border-radius: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.darkMod:checked {
+  background-image: url(../image/lightMod.png);
+  background-size: cover;
+  transition: background-image 0.5s;
+}
+
+.darkMod:checked::before {
+  transform: translate(150%);
+  transition: all 0.5s;
+  background-color: rgb(244, 189, 33);
+}
+
+/* .light-mode {
+    background-color: rgb(253, 253, 253);
+    color: rgb(0, 0, 0);
+} */
